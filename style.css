@@ -27,6 +27,32 @@ main{
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    gap:20px;
+}
+.clear{
+    width: 100%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+.colorpicker{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+#colorpicker{
+    width: 100%;
 }
 .container{
     border: 2px solid black;
@@ -71,3 +97,4 @@ main{
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
   }
+  
