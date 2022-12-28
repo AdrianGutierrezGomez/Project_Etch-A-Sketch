@@ -28,11 +28,11 @@ main{
     align-items: center;
     text-align: center;
     flex-direction: column;
-    gap:20px;
+    gap:15px;
 }
-.clear{
+.clear,.generate{
     width: 100%;
-    background-color: #4CAF50; /* Green */
+    background-color: #A51C30; /* Crimson */
     border: none;
     color: white;
     padding: 10px;
@@ -81,20 +81,21 @@ main{
     opacity: 1; /* Fully shown on mouse-over */
   }
   
-  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) 
+  and -moz- (Firefox) to override default look) */
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    background: #A51C30; /* Crimson background */
     cursor: pointer; /* Cursor on hover */
   }
   
   .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    background: #A51C30; /* Crimson background */
     cursor: pointer; /* Cursor on hover */
   }
   
