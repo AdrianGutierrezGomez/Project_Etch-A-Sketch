@@ -81,7 +81,7 @@ function changeColor(e) {
     } else if (currentMode === 'eraser') {
       e.target.style.backgroundColor = '#fefefe';
     }
-  }
+  };
 
 function createGrid(numberRows,numberColumns){
     for(let i = 0; i < numberRows; i++){
@@ -98,7 +98,7 @@ function createGrid(numberRows,numberColumns){
     coloredColumns.forEach((coloredColumn) => {
         coloredColumn.addEventListener("mouseenter", changeColor);
     });
-}
+};
 
 createGrid(16,16);
 
