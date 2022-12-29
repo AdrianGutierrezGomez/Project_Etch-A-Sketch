@@ -2,17 +2,20 @@ var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 // Display the default slider value
 output.innerHTML = slider.value + ' x '+ slider.value; 
-
+let userNumberRows = 16
+let userNumberColumns = 16
 // Update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
   output.innerHTML = this.value + ' x ' + this.value;
+  userNumberColumns = this.value;
+  userNumberRows = this.value;
 }
 
-let userNumberRows = this.value;
-let userNumberColumns = this.value;
+
 const clearBtn = document.getElementById("clear");
 const container = document.querySelector(".container");
 const generateBtn = document.getElementById("generate");
+
 
 function createGrid(numberRows,numberColumns){
     for(let i = 0; i < numberRows; i++){
@@ -35,5 +38,13 @@ for(let i = 0; i < allColumns.length; i++){
 };
 });
 generateBtn.addEventListener('click', ()=>{
-console.log(userNumberColumns,userNumberRows)
+    let allColumns = document.querySelectorAll(".column");
+    let allRows = document.querySelectorAll(".row");
+    for(let i = 0; i < allRows.length; i++){
+        allRows[i].remove();
+    };
+    for(let i = 0; i < allColumns.length; i++){
+        allColumns[i].remove();
+    };
+    createGrid(userNumberColumns,userNumberRows)
 });
