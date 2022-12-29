@@ -39,7 +39,7 @@ function createGrid(numberRows,numberColumns){
         /*coloredColumn.addEventListener("input", ()=>{
 
         });*/
-        coloredColumn.addEventListener("mouseenter", () => {
+        coloredColumn.addEventListener("mousedown" && "mouseenter", () => {
             coloredColumn.setAttribute('style', `background:${colorPicked}`)
         }); 
     });

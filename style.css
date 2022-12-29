@@ -30,7 +30,7 @@ main{
     flex-direction: column;
     gap:15px;
 }
-.clear,.generate{
+.clear,.generate,.eraser,.random,.color{
     width: 100%;
     background-color: #A51C30; /* Crimson */
     border: none;
