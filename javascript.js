@@ -15,7 +15,7 @@ slider.oninput = function() {
 const clearBtn = document.getElementById("clear");
 const container = document.querySelector(".container");
 const generateBtn = document.getElementById("generate");
-
+const colorPicked = document.getElementById("colorpicker").value;
 
 function createGrid(numberRows,numberColumns){
     for(let i = 0; i < numberRows; i++){
@@ -28,15 +28,25 @@ function createGrid(numberRows,numberColumns){
             row.appendChild(column);        
         }
     }
+    let coloredColumns = document.querySelectorAll(".column");
+
+    coloredColumns.forEach((coloredColumn) => {
+        coloredColumn.addEventListener("mouseenter", () => {
+            coloredColumn.setAttribute('style', `background:${colorPicked}`)
+        }); 
+    });
 }
 
 createGrid(16,16);
+
+
 clearBtn.addEventListener('click',()=>{
-let allColumns = document.querySelectorAll(".column");
-for(let i = 0; i < allColumns.length; i++){
-    allColumns[i].setAttribute('style', 'background:white');
-};
+    let allColumns = document.querySelectorAll(".column");
+    for(let i = 0; i < allColumns.length; i++){
+        allColumns[i].setAttribute('style', 'background:white');
+    };
 });
+
 generateBtn.addEventListener('click', ()=>{
     let allColumns = document.querySelectorAll(".column");
     let allRows = document.querySelectorAll(".row");
@@ -46,5 +56,10 @@ generateBtn.addEventListener('click', ()=>{
     for(let i = 0; i < allColumns.length; i++){
         allColumns[i].remove();
     };
-    createGrid(userNumberColumns,userNumberRows)
+    createGrid(userNumberColumns,userNumberRows);
+    
+   console.log(userNumberColumns, userNumberRows);
 });
+
+
+
