@@ -8,10 +8,11 @@ slider.oninput = function() {
   output.innerHTML = this.value + ' x ' + this.value;
 }
 
-let userNumberRows = slider.oninput;
-let userNumberColumns = slider.oninput;
-const clear = document.getElementById("clear");
+let userNumberRows = this.value;
+let userNumberColumns = this.value;
+const clearBtn = document.getElementById("clear");
 const container = document.querySelector(".container");
+const generateBtn = document.getElementById("generate");
 
 function createGrid(numberRows,numberColumns){
     for(let i = 0; i < numberRows; i++){
@@ -26,4 +27,13 @@ function createGrid(numberRows,numberColumns){
     }
 }
 
-createGrid(16,16)
+createGrid(16,16);
+clearBtn.addEventListener('click',()=>{
+let allColumns = document.querySelectorAll(".column");
+for(let i = 0; i < allColumns.length; i++){
+    allColumns[i].setAttribute('style', 'background:white');
+};
+});
+generateBtn.addEventListener('click', ()=>{
+console.log(userNumberColumns,userNumberRows)
+});
