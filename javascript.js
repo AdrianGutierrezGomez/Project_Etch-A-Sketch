@@ -15,7 +15,12 @@ slider.oninput = function() {
 const clearBtn = document.getElementById("clear");
 const container = document.querySelector(".container");
 const generateBtn = document.getElementById("generate");
-const colorPicked = document.getElementById("colorpicker").value;
+const colorPicker = document.getElementById("colorpicker");
+let colorPicked = document.getElementById("colorpicker").value;
+
+colorPicker.addEventListener('input', (e) => {
+    colorPicked = e.target.value;
+  });
 
 function createGrid(numberRows,numberColumns){
     for(let i = 0; i < numberRows; i++){
@@ -31,6 +36,9 @@ function createGrid(numberRows,numberColumns){
     let coloredColumns = document.querySelectorAll(".column");
 
     coloredColumns.forEach((coloredColumn) => {
+        /*coloredColumn.addEventListener("input", ()=>{
+
+        });*/
         coloredColumn.addEventListener("mouseenter", () => {
             coloredColumn.setAttribute('style', `background:${colorPicked}`)
         }); 
@@ -57,8 +65,6 @@ generateBtn.addEventListener('click', ()=>{
         allColumns[i].remove();
     };
     createGrid(userNumberColumns,userNumberRows);
-    
-   console.log(userNumberColumns, userNumberRows);
 });
 
 
